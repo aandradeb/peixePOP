@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Acuario">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Acuario.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
