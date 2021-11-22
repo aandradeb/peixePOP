@@ -63,7 +63,7 @@ Lo básico para cualquier desarrollador en PHP es tener un ambiente de desarroll
 
 Para el acceso a datos de nuestro acuario en un principio hicimos uso de `ficheros.txt`, ahora vamos a trabajar con [PHP](https://www.php.net) y [MySQL](https://www.mysql.com)  utilizando [Doker](https://www.docker.com). 
 
-#### Doker al rescate.
+#### Docker al rescate.
 La forma más sencilla de crear ambientes de desarrollo es con Docker, donde utilizamos el archivo `docker-compose.yml` para configurar las características (versiones, puertos, variables de entorno, etc) de los servicios que necesitamos.
 
 #### Requerimientos.
