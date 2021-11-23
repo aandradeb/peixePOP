@@ -7,24 +7,25 @@ package tienda;
 public abstract class Articulo {
 
     private String codigo;
-    private String descripcion;    
+    private String descripcion;
     private int stock;
     private double precio;
-    
+
     /**
      * Constructor
-     * @param codigo        Codigo que identifica al artículo en la BBDD
-     * @param descripcion   Descripción comprensible del artículo
-     * @param stock         Cantidad disponible en stock
-     * @param precio        Precio unitario del artículo
+     *
+     * @param codigo      Codigo que identifica al artículo en la BBDD
+     * @param descripcion Descripción comprensible del artículo
+     * @param stock       Cantidad disponible en stock
+     * @param precio      Precio unitario del artículo
      */
     public Articulo(String codigo, String descripcion, int stock, double precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
-        this.stock=stock;
-        this.precio=precio;
+        this.stock = stock;
+        this.precio = precio;
     }
-    
+
     /**
      * @return Codigo del artículo
      */

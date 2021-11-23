@@ -7,7 +7,7 @@ import common.ConnDB;
  * @author Developer
  */
 public class Planta extends Especie{
-    
+
     private final ConnDB bbdd=ConnDB.getInstance();
     private String medioDeVida;
     private Sala sala=null;
@@ -36,7 +36,7 @@ public class Planta extends Especie{
     public void setMedioDeVida(String medioDeVida) {
         this.medioDeVida = medioDeVida;
     }
-    
+
     public Sala getSala() {
         return sala;
     }
@@ -44,5 +44,5 @@ public class Planta extends Especie{
     public void setSala(Sala sala) {
         this.sala = sala;
     }
-    
+
 }

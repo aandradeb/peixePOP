@@ -7,19 +7,19 @@ import java.util.ArrayList;
  * @author Angel, Jose, Miguel, Paulo
  */
 public class Sala {
-    
+
     // Maximo de estanques por sala
     public final int maxEstanques = 2;
-    
+
     // Código de la sala
     private String codigo;
 
     // Nombre de la sala
     private String nombre;
-    
+
     // Tipo de la sala
     private String tipo;
-    
+
     // Estanque que tiene la sala
     private ArrayList<Estanque> estanques = new ArrayList();
     private Planta planta=null;
@@ -91,7 +91,7 @@ public class Sala {
     public void agregarEstanques(Estanque estanque) {
         this.estanques.add(estanque);
     }
-    
+
     public Planta getPlanta() {
         return planta;
     }
@@ -99,6 +99,6 @@ public class Sala {
     public void agregarPlanta(Planta planta) {
         this.planta = planta;
     }
-    
-    
+
+
 }

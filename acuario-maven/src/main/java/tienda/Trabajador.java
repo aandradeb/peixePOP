@@ -44,5 +44,4 @@ public class Trabajador extends Persona {
         return new Factura(cliente.getCodigo(), importeTotal, true);
     }
 
-   
 }

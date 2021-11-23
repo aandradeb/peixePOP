@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Angel, Jose, Miguel, Paulo
  */
 public class Acuario {
-    
+
     // JDBC Conector BBDD
     ConnDB bbdd=null;
     private final String nombre;
@@ -16,7 +16,7 @@ public class Acuario {
     private ArrayList<Estanque> inventarioEstanques;
     private ArrayList<Tiburon> inventarioTiburones;
     private ArrayList<Planta> inventarioPlantas;
-    
+
     /**
      * Constructor por defecto
      * @param nombre El nombre del acuario
@@ -25,7 +25,7 @@ public class Acuario {
         this.bbdd=ConnDB.getInstance();
         this.nombre=nombre;
     }
-    
+
     public void test() {
         System.out.println(">>>>>>>>>>> Preparando inventario...");
         cargarInventario();
@@ -36,13 +36,13 @@ public class Acuario {
         // Asignar a cada sala sus estanques, plantas y tiburones correspondientes
         System.out.println(">>>>>>>>>>> Configurando inventario...");
         asignarJerarquia();
-        System.out.println(">>>>>>>>>>> Inventario configurado");        
+        System.out.println(">>>>>>>>>>> Inventario configurado");
         // Se muestra como está configurado el acuario
 //        System.out.println(">>>>>>>>>>> Mostrando configuración...");
 //        mostrarJeraquia();
         System.out.println("******************\n");
     }
-    
+
     public void cargarInventario() {
         inventarioSalas=bbdd.getSalas();
         System.out.println(">>>>>>>>>>> Salas cargadas");
@@ -83,9 +83,9 @@ public class Acuario {
         bbdd.mostrarDatosPlantas();
         System.out.println("******************\n");
     }
-    
+
     /**
-     * Se le asigna a cada sala sus estanques correspondientes y en cada 
+     * Se le asigna a cada sala sus estanques correspondientes y en cada
      * estanque se le asignan los tiburones correspondientes
      */
     public void asignarJerarquia() {
@@ -93,7 +93,7 @@ public class Acuario {
         asignarPlantasASalasYEstanques();
         asignarTiburonesACadaEstanque();
     }
-    
+
     /**
      * Se muestra como están organizadas las salas, estanques y tiburones en el
      * acuario
@@ -118,7 +118,7 @@ public class Acuario {
             }
         }
     }
-    
+
     private void asignarEstanquesACadaSala() {
         for (Estanque e: inventarioEstanques){
             String codSala=e.getSala().getCodigo();
@@ -129,7 +129,7 @@ public class Acuario {
             }
         }
     }
-    
+
     private void asignarPlantasASalasYEstanques() {
         for (Planta p: inventarioPlantas){
             if (p.getSala()!=null){
@@ -148,7 +148,7 @@ public class Acuario {
                     }
                 }
             }
-            
+
         }
     }
 

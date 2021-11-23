@@ -1,7 +1,8 @@
 package common;
 
-import acuario.Estanque;
-import acuario.Planta;
+import tienda.articulos.*;
+import tienda.*;
+import acuario.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,16 +10,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import tienda.Articulo;
-import tienda.Cliente;
-import tienda.Factura;
-import tienda.LineaFactura;
-import tienda.LineaPedido;
-import tienda.Pedido;
-import tienda.Trabajador;
-import tienda.articulos.*;
-import acuario.Sala;
-import acuario.Tiburon;
+
 
 /**
  * Clase principal para conectarse a la base de datos
@@ -34,7 +26,7 @@ public class ConnDB {
     /**
      * Constructor para conectarse la base de datos por defecto
      */
-    private ConnDB() {
+    public ConnDB() {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://easybyte.club:2223/peixepop", "jdbc", "peixejdbc@Servo2021*");
             System.out.println(">>>>>>>>>>> La conexión a la Base de Datos se ha creado con éxito");
@@ -43,7 +35,7 @@ public class ConnDB {
             System.out.println(">>>>>>>>>>> No se puede conectar con la base de datos");
         }
     }
-    
+
     public static ConnDB getInstance(){
         if (instanciaUnica==null){
             instanciaUnica=new ConnDB();
@@ -83,7 +75,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public Sala getSalaByCodigo(String codigoSala){
         Sala s=null;
         this.cargaDatos("SELECT * FROM salas WHERE codigo='"+codigoSala+"'");
@@ -99,7 +91,7 @@ public class ConnDB {
         }
         return s;
     }
-    
+
     // API ESTANQUES
     public ArrayList<Estanque> getEstanques(){
         ArrayList<Estanque> lista=new ArrayList();
@@ -117,7 +109,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public Estanque getEstanqueByCodigo(String codigoEstanque){
         Estanque e=null;
         this.cargaDatos("SELECT * FROM estanques WHERE codigo='"+codigoEstanque+"'");
@@ -134,7 +126,7 @@ public class ConnDB {
         }
         return e;
     }
-    
+
     // API TIBURONES
     public ArrayList<Tiburon> getTiburones(){
         ArrayList<Tiburon> lista=new ArrayList();
@@ -152,7 +144,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     // API PLANTAS
     public ArrayList<Planta> getPlantas(){
         ArrayList<Planta> lista=new ArrayList();
@@ -179,7 +171,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public int getNumeroFilas(char tabla){
         int contador=0;
         switch (tabla){
@@ -205,7 +197,7 @@ public class ConnDB {
         }
         return contador;
     }
-       
+
     /**
      * Muestra los datos de la tabla estanques
      */
@@ -222,7 +214,7 @@ public class ConnDB {
             System.out.println(e.getMessage());
         }
     }
-    
+
     /**
      * Muestra los datos de la tabla plantas
      */
@@ -275,7 +267,7 @@ public class ConnDB {
     }
 
 
-    
+
     // MÉTODOS AÑADIDOS PARA LA TIENDA
     // API ARTICULOS
     public ArrayList<Articulo> getArticulos(){
@@ -311,7 +303,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public Articulo getArticuloByCodigo(String codigoArticulo){
         Articulo a=null;
         this.cargaDatos("SELECT * FROM articulos WHERE codigo='"+codigoArticulo+"'");
@@ -345,7 +337,7 @@ public class ConnDB {
         }
         return a;
     }
-    
+
     public Articulo getArticuloRandom(){
         Articulo a=null;
         this.cargaDatos("SELECT * FROM articulos ORDER BY RAND() LIMIT 1");
@@ -379,7 +371,7 @@ public class ConnDB {
         }
         return a;
     }
-    
+
     // API CLIENTES
     public ArrayList<Cliente> getClientes(){
         ArrayList<Cliente> lista=new ArrayList();
@@ -397,7 +389,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public Cliente getClienteByCodigo(String codigoCliente){
         Cliente c=null;
         this.cargaDatos("SELECT * FROM clientes WHERE codigo='"+codigoCliente+"'");
@@ -414,7 +406,7 @@ public class ConnDB {
         }
         return c;
     }
-    
+
     public Cliente getClienteRandom(){
         Cliente c=null;
         this.cargaDatos("SELECT * FROM clientes  ORDER BY RAND() LIMIT 1");
@@ -431,7 +423,7 @@ public class ConnDB {
         }
         return c;
     }
-    
+
     // API TRABAJADORES
     public ArrayList<Trabajador> getTrabajadores(){
         ArrayList<Trabajador> lista=new ArrayList();
@@ -450,7 +442,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public Trabajador getTrabajadorByCodigo(String codigoTrabajador){
         Trabajador t=null;
         this.cargaDatos("SELECT * FROM trabajadores WHERE codigo='"+codigoTrabajador+"'");
@@ -468,7 +460,7 @@ public class ConnDB {
         }
         return t;
     }
-    
+
     public Trabajador getTrabajadorRandom(){
         Trabajador t=null;
         this.cargaDatos("SELECT * FROM trabajadores ORDER BY RAND() LIMIT 1");
@@ -510,7 +502,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public Factura getFacturaByNumero(int numeroFactura){
         Factura f=null;
         this.cargaDatos("SELECT * FROM facturas WHERE codigo='"+numeroFactura+"'");
@@ -532,7 +524,7 @@ public class ConnDB {
         }
         return f;
     }
-    
+
     public ArrayList<LineaFactura> getLineasFacturaByNumeroFactura(int numeroFactura){
         ArrayList<LineaFactura> lista=new ArrayList();
         this.cargaDatos("SELECT * FROM lineas_facturas WHERE codigo_factura='"+numeroFactura+"'");
@@ -549,7 +541,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     // API PEDIDOS
     public ArrayList<Pedido> getPedidos(){
         ArrayList<Pedido> lista=new ArrayList();
@@ -571,7 +563,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     public Pedido getPedidoByCodigo(int codigoPedido){
         Pedido p=null;
         this.cargaDatos("SELECT * FROM pedidos WHERE codigo='"+codigoPedido+"'");
@@ -591,7 +583,7 @@ public class ConnDB {
         }
         return p;
     }
-    
+
     public ArrayList<LineaPedido> getLineasPedidoByCodigoPedido(String codigoPedido){
         ArrayList<LineaPedido> lista=new ArrayList();
         this.cargaDatos("SELECT * FROM lineas_pedidos WHERE codigo_pedido='"+codigoPedido+"'");
@@ -608,7 +600,7 @@ public class ConnDB {
         }
         return lista;
     }
-    
+
     /**
      * Muestra los datos de la tabla articulos
      */
@@ -644,7 +636,7 @@ public class ConnDB {
         }
     }
 
-    
+
     /**
      * Muestra los datos de la tabla trabajadores
      */
@@ -662,7 +654,7 @@ public class ConnDB {
             System.out.println(e.getMessage());
         }
     }
-    
+
     /**
      * Muestra los datos de la tabla factura
      */
@@ -680,7 +672,7 @@ public class ConnDB {
             System.out.println(e.getMessage());
         }
     }
-    
+
     /**
      * Muestra los datos de la tabla lineas_facturas
      */
@@ -698,7 +690,7 @@ public class ConnDB {
             System.out.println(e.getMessage());
         }
     }
-    
+
     /**
      * Muestra los datos de la tabla lineas_facturas
      */
@@ -716,7 +708,7 @@ public class ConnDB {
             System.out.println(e.getMessage());
         }
     }
-    
+
     /**
      * Muestra los datos de la tabla pedidos
      */
