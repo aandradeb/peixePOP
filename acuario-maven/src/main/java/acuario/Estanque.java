@@ -8,29 +8,29 @@ import java.util.ArrayList;
  * @author Angel, Jose, Miguel, Paulo
  */
 public class Estanque {
-    
+
     // Maximo de tiburones por estanque
 
     /**
      *
      */
     public final int maxTiburones = 6;
-    
+
     // Código de estanque
     private String codigo;
-    
+
     // Nombre de estanque
     private String nombre;
-    
+
     // Tipo de estanque
     private String tipo;
-    
+
     // Sala a la que pertenece
     private Sala sala;
-    
+
     // Tiburones que tiene cada estanque
     private ArrayList<Tiburon> tiburones=new ArrayList();
-    
+
     private ArrayList<Planta> plantas=new ArrayList();
 
     /**
@@ -40,9 +40,9 @@ public class Estanque {
      * @param tipo En que está especializada el estanque
      * @param sala Sala a la que petenece
      */
-    
+
     private final ConnDB bbdd=ConnDB.getInstance();
-    
+
     public Estanque(String codigo, String tipo, String nombre, String codigo_sala) {
         this.codigo = codigo;
         this.tipo = tipo;
@@ -63,7 +63,7 @@ public class Estanque {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
+
     /**
      * @return String Devuélve el código del estanque
      */
@@ -105,14 +105,14 @@ public class Estanque {
     public Sala getSala() {
         return sala;
     }
-    
+
     /**
      * @return ArrayList Devuélve un arraylist con los tiburones del estanque
      */
     public ArrayList<Tiburon> getTiburones() {
         return tiburones;
     }
-    
+
     /**
      * @param tiburon Se le añade un tiburon al estanque
      */
@@ -120,14 +120,14 @@ public class Estanque {
         this.tiburones.add(tiburon);
     }
 
-    
+
     /**
      * @return ArrayList Devuélve un arraylist con las plantas del estanque
      */
     public ArrayList<Planta> getPlantas() {
         return plantas;
     }
-    
+
     /**
      * @param planta Se le añade una planta al estanque
      */

@@ -7,10 +7,10 @@ import common.ConnDB;
  * @author Angel, Jose, Miguel, Paulo
  */
 public class Tiburon extends Especie{
-    
+
     private final ConnDB bbdd=ConnDB.getInstance();
     private String tamano;
-    
+
     /**
      * Constructor
      * @param codigo            Codigo identificativo del objeto Tiburón
@@ -23,19 +23,19 @@ public class Tiburon extends Especie{
         setEstanque(bbdd.getEstanqueByCodigo(codigo_estanque));
         this.tamano=tamano;
     }
-    
+
     /**
      * @return String Devuélve el tamaño del tiburón
      */
     public String getTamano() {
         return tamano;
     }
-    
+
     /**
      * @param tamano Se le asigna un tamaño al tiburón
      */
     public void setTamano(String tamano) {
         this.tamano = tamano;
     }
-    
+
 }

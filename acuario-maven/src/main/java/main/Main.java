@@ -1,5 +1,4 @@
 package main;
-
 import acuario.Acuario;
 import tienda.Tienda;
 
@@ -8,9 +7,8 @@ import tienda.Tienda;
  * @author Angel, Jose, Miguel, Paulo, Rocio, Yudaisy, Gianny, Emilio
  */
 public class Main {
-    
-    public static void main(String[] args) {
-        
+
+    public static void main(String[] args)  {
         try {
             Acuario acuario = new Acuario("PEIXEPOP");
             acuario.test();

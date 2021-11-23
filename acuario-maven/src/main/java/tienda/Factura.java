@@ -12,11 +12,11 @@ import java.util.Calendar;
  * Modela una Factura, que contiene los datos del encabezamiento y una lista
  * de LineaFactura, que reflejan los artículos que en ella figuran, la cantidad
  * vendida y el precio
- * 
+ *
  * @author Emilio
  */
 public class Factura {
-    
+
     private int numero;
     private String codigoCliente;
     private String fecha;
@@ -39,7 +39,7 @@ public class Factura {
         this.importeTotal = importeTotal;
         this.pagado = pagado;
     }
-    
+
     /**
      * Constructor
      * @param codigoCliente Codigo identificativo del Cliente
@@ -133,7 +133,7 @@ public class Factura {
         this.pagado = pagado;
     }
 
-    /**este metodo recibe como parámetro 
+    /**este metodo recibe como parámetro
      * @param l Un objeto LineaFactura que debe añadirse a la lista
      */
     public void añadirLinea(LineaFactura l) {
@@ -203,7 +203,7 @@ public class Factura {
             fw.write("## \n");
             fw.write("#######################################################\n");
             fw.close();
-            
+
             System.out.println("Factura guardada como "+fichero);
         }catch(IOException ioe){
             System.out.println(ioe.getLocalizedMessage());

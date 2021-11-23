@@ -5,11 +5,11 @@ package acuario;
  * @author emilio
  */
 public abstract class Especie {
-    
+
     private String codigo;
     private String descripcion;
     private Estanque estanque=null;
-    
+
     /**
      * Constructor
      * @param codigo Codigo identificativo del objeto
@@ -19,7 +19,7 @@ public abstract class Especie {
         this.codigo = codigo;
         this.descripcion = descripcion;
     }
-    
+
     /**
      * @return String Devuélve codigo de especie
      */

@@ -1,7 +1,7 @@
 package tienda;
 
 public class LineaPedido {
-    
+
     private Articulo articulo;
     private int cantidad;
     private double precio;

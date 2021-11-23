@@ -3,7 +3,7 @@ package tienda;
 import java.util.ArrayList;
 
 /**
- * Modela un carrito o cesta de la compra mediante un ArrayList 
+ * Modela un carrito o cesta de la compra mediante un ArrayList
  * @author yuda
  */
 public class Carrito {
@@ -18,7 +18,7 @@ public class Carrito {
         this.carrito = new ArrayList<>();
         this.codigo = codigo;
     }
-    
+
     /**
      * @return Un ArrayList de objetos de la clase Articulo
      */
@@ -48,7 +48,7 @@ public class Carrito {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-    
+
     /**
      *
      * @param articulo Un objeto de la clase Articulo que se debe poner en el carrito
@@ -56,7 +56,7 @@ public class Carrito {
     public void anadirArticulo(Articulo articulo){
         carrito.add(articulo);
     }
-    
+
     /**
      *
      * @param articulo Un objeto de la clase Articulo que debe quitarse del carrito
@@ -64,5 +64,5 @@ public class Carrito {
     public void quitarArticulo(Articulo articulo){
         carrito.remove(articulo);
     }
-    
+
 }
