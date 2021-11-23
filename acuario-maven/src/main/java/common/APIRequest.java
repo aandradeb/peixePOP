@@ -75,26 +75,7 @@ public class APIRequest {
         }
         return lista;
     }*/
-    
-        // API ENTRADAS
-    /*public ArrayList<Entrada> getEntradas(){
-        JSONArray jsonResponse = api.getResponse("/entradas");
-        ArrayList<Entrada> lista=new ArrayList();
-        for (int indice = 0; indice < jsonResponse.length(); indice++) {
-            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
-            String codigo = jsonObject.getString("codigo");
-            String edad = jsonObject.getString("edad");
-            String precio = jsonObject.getString("precio");
-            String tipo = jsonObject.getString("tipo");
-            String codigoEvento = jsonObject.getString("codigo_evento");
-            String fecha = jsonObject.getString("fecha");
-            String codigoCliente = jsonObject.getString("codigo_cliente");
-
-            lista.add(new Entrada(codigo,edad,precio,tipo,codigoEvento,fecha,codigoCliente));
-        }
-        return lista;
-    }*/
-    
+        
     // API EVENTOS
     /*public ArrayList<Evento> getEventos(){
         JSONArray jsonResponse = api.getResponse("/eventos");
