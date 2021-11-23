@@ -11,7 +11,7 @@ public class APIRequest {
 
     private final APIConfig api = new APIConfig();
 
-    // MÉTODOS AÑADIDOS PARA EL ACUARIO
+    // MÃ‰TODOS AÃ‘ADIDOS PARA EL ACUARIO
     // API SALAS
     public ArrayList<Sala> getSalas(){
         JSONArray jsonResponse = api.getResponse("/salas");
@@ -41,24 +41,81 @@ public class APIRequest {
         return lista;
     }
     
-    // API FACTURAS
-    public ArrayList<Factura> getFacturas(){
-        JSONArray jsonResponse = api.getResponse("/facturas");
-        ArrayList<Factura> lista=new ArrayList();
+    // API ARTICULOS
+    /*public ArrayList<Articulo> getArticulos(){
+        JSONArray jsonResponse = api.getResponse("/articulos");
+        ArrayList<Articulo> lista=new ArrayList();
         for (int indice = 0; indice < jsonResponse.length(); indice++) {
             JSONObject jsonObject = jsonResponse.getJSONObject(indice);
             String codigo = jsonObject.getString("codigo");
-            String codigo_cliente = jsonObject.getString("codigo_cliente");
-            String fecha = jsonObject.getString("fecha");
-            String importe_total = jsonObject.getString("importe_total");
-            String pagada = jsonObject.getString("pagada");
-            lista.add(new Factura(codigo,codigo_cliente,fecha,importe_total,pagada));
+            String descripcion = jsonObject.getString("descripcion");
+            String stock = jsonObject.getString("stock");
+            String precio = jsonObject.getString("precio");
+            String tipoArticulo = jsonObject.getString("tipo_articulo");
+            lista.add(new Articulo(codigo,descripcion,stock,precio,tipoArticulo));
         }
         return lista;
-    }
+    }*/
+    
+    // API ENTRADAS
+    /*public ArrayList<Entrada> getEntradas(){
+        JSONArray jsonResponse = api.getResponse("/entradas");
+        ArrayList<Entrada> lista=new ArrayList();
+        for (int indice = 0; indice < jsonResponse.length(); indice++) {
+            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
+            String codigo = jsonObject.getString("codigo");
+            String edad = jsonObject.getString("edad");
+            String precio = jsonObject.getString("precio");
+            String tipo = jsonObject.getString("tipo");
+            String codigoEvento = jsonObject.getString("codigo_evento");
+            String fecha = jsonObject.getString("fecha");
+            String codigoCliente = jsonObject.getString("codigo_cliente");
+
+            lista.add(new Entrada(codigo,edad,precio,tipo,codigoEvento,fecha,codigoCliente));
+        }
+        return lista;
+    }*/
+    
+        // API ENTRADAS
+    /*public ArrayList<Entrada> getEntradas(){
+        JSONArray jsonResponse = api.getResponse("/entradas");
+        ArrayList<Entrada> lista=new ArrayList();
+        for (int indice = 0; indice < jsonResponse.length(); indice++) {
+            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
+            String codigo = jsonObject.getString("codigo");
+            String edad = jsonObject.getString("edad");
+            String precio = jsonObject.getString("precio");
+            String tipo = jsonObject.getString("tipo");
+            String codigoEvento = jsonObject.getString("codigo_evento");
+            String fecha = jsonObject.getString("fecha");
+            String codigoCliente = jsonObject.getString("codigo_cliente");
+
+            lista.add(new Entrada(codigo,edad,precio,tipo,codigoEvento,fecha,codigoCliente));
+        }
+        return lista;
+    }*/
+    
+    // API EVENTOS
+    /*public ArrayList<Evento> getEventos(){
+        JSONArray jsonResponse = api.getResponse("/eventos");
+        ArrayList<Evento> lista=new ArrayList();
+        for (int indice = 0; indice < jsonResponse.length(); indice++) {
+            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
+            String codigo = jsonObject.getString("codigo");
+            String nombre = jsonObject.getString("nombre");
+            String fecha = jsonObject.getString("fecha");
+            String precio = jsonObject.getString("precio");
+            String duracion = jsonObject.getString("duracion");
+            String requisitoEdad = jsonObject.getString("requisito_edad");
+            String aforo = jsonObject.getString("aforo");
+
+            lista.add(new Evento(codigo,nombre,fecha,precio,duracion,requisitoEdad,aforo));
+        }
+        return lista;
+    }*/
     
     // API LINEAS FACTURAS
-    public ArrayList<Linea_Factura> getLineasFacturas(){
+    /*public ArrayList<Linea_Factura> getLineasFacturas(){
         JSONArray jsonResponse = api.getResponse("/lineas_facturas");
         ArrayList<Linea_Factura> lista=new ArrayList();
         for (int indice = 0; indice < jsonResponse.length(); indice++) {
@@ -101,7 +158,7 @@ public class APIRequest {
             lista.add(new Pedido(codigo,fecha,recibido));
         }
         return lista;
-    }
-    
+    }*/
     
 }
+
