@@ -95,8 +95,25 @@ public class APIRequest {
         return lista;
     }*/
     
+
+    // API FACTURAS
+    /*public ArrayList<Factura> getFacturas(){
+        JSONArray jsonResponse = api.getResponse("/facturas");
+        ArrayList<Factura> lista=new ArrayList();
+        for (int indice = 0; indice < jsonResponse.length(); indice++) {
+            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
+            String codigo = jsonObject.getString("codigo");
+            String codigo_cliente = jsonObject.getString("codigo_cliente");
+            String fecha = jsonObject.getString("fecha");
+            String importe_total = jsonObject.getString("importe_total");
+            String pagada = jsonObject.getString("pagada");
+            lista.add(new Factura(codigo,codigo_cliente,fecha,importe_total,pagada));
+        }
+        return lista;
+    }
+
     // API LINEAS FACTURAS
-    /*public ArrayList<Linea_Factura> getLineasFacturas(){
+    public ArrayList<Linea_Factura> getLineasFacturas(){
         JSONArray jsonResponse = api.getResponse("/lineas_facturas");
         ArrayList<Linea_Factura> lista=new ArrayList();
         for (int indice = 0; indice < jsonResponse.length(); indice++) {
