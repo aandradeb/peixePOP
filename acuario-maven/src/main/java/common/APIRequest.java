@@ -40,7 +40,65 @@ public class APIRequest {
         }
         return lista;
     }
-    
+
+    // API TRABAJADORES
+    public ArrayList<Trabajador> getTrabajadores() {
+        JSONArray jsonResponse = api.getResponse("/trabajadores");
+        ArrayList<Trabajador> lista=new ArrayList();
+        for (int indice = 0; indice < jsonResponse.length(); indice++) {
+            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
+            String codigo = jsonObject.getString("codigo");
+            String nombre = jsonObject.getString("nombre");
+            String direccion = jsonObject.getString("direccion");
+            String telefono = jsonObject.getString("telefono");
+            String salario = jsonObject.getString("salario");
+            lista.add(new Trabajador(codigo,nombre,direccion,telefono,salario));
+        }
+        return lista;
+    }
+
+
+    // API TIBURONES
+    public ArrayList<Tiburon> getTriburones() {
+        JSONArray jsonResponse = api.getResponse("/tiburones");
+        ArrayList<Tiburon> lista=new ArrayList();
+        for (int indice = 0; indice < jsonResponse.length(); indice++) {
+            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
+            String codigo = jsonObject.getString("codigo");
+            String nombre = jsonObject.getString("nombre");
+            String tamano = jsonObject.getString("tamano");
+            String codigo_estanque = jsonObject.getString("codigo_estanque");
+            lista.add(new Tiburon(codigo,nombre,tamano,codigo_estanque));
+        }
+        return lista;
+    }
+
+
+    // API PLANTAS
+    public ArrayList<Planta> getPlantas(){
+        JSONArray jsonResponse = api.getResponse("/plantas");
+        ArrayList<Planta> lista=new ArrayList();
+        for (int indice = 0; indice < jsonResponse.length(); indice++) {
+            JSONObject jsonObject = jsonResponse.getJSONObject(indice);
+            String codigo = jsonObject.getString("codigo");
+            String medioDeVida = jsonObject.getString("medio_de_vida");
+            String nombre = jsonObject.getString("nombre");
+            String cod_estanque="";
+            String cod_sala="";
+            switch (medioDeVida){   //Retornamos solo el cod_estanque o cod_sala en base a medioDeVida.
+                case "Acuatico":
+                    cod_estanque=jsonObject.getString("codigo_estanque");
+                    break;
+                case "Terrestre":
+                    cod_sala = jsonObject.getString("codigo_sala");
+                    break;
+            }
+            lista.add(new Planta(codigo,medioDeVida,nombre,cod_estanque, cod_sala));
+        }
+        return lista;
+    }
+
+
     // API ARTICULOS
     /*public ArrayList<Articulo> getArticulos(){
         JSONArray jsonResponse = api.getResponse("/articulos");
